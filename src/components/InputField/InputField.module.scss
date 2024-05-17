@@ -1,0 +1,43 @@
+.input {
+  @apply w-full h-12 px-4 bg-white/10 outline-none;
+}
+.textarea {
+  @apply w-full max-h-32 px-4 bg-white/10 outline-none;
+}
+.select {
+  @apply w-full h-12 px-4 gap-1 flex bg-white/10;
+
+  &Option {
+    @apply text-black;
+  }
+}
+
+
+.boolean {
+  &Label {
+    @apply w-full h-10 px-4 flex items-center justify-center text-sm font-semibold
+      border-2 transition-all cursor-pointer select-none;
+  }
+
+  &Label {
+    &True {
+      @apply border-green-500/50;
+    }
+    &False {
+      @apply bg-red-500/50 border-red-500/50;
+    }
+  }
+  
+  &Input {
+    @apply hidden;
+
+    &:checked {
+      & ~ .booleanLabelTrue {
+        @apply bg-green-500/50;
+      }
+      & ~ .booleanLabelFalse {
+        @apply bg-transparent;
+      }
+    }
+  }
+}
